@@ -20,7 +20,7 @@ int main(){
     cin >> new_element;
 
     n++;
-    aiar[i] = new_element;
+    aiar[i] = new_element;   // or aiar[n-1] = new_element
     cout << "array elements before insertion at end "<< endl;
 
     for(i = 0; i < n; i++){
