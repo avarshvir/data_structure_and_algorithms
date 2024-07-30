@@ -17,4 +17,8 @@ int main(){
     cout << "Last Element : "<< arr.back() << endl;
     //cout << "data : " << arr.data() << endl;
 
+    for(auto i: arr){
+        cout << i << " ";
+    }
+
 }
