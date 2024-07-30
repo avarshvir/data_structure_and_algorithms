@@ -24,9 +24,9 @@ int main(){
             break;
         }
     }
+    
     if(!found){
             cout << "Element not found " << endl;
         }
-
 
 }

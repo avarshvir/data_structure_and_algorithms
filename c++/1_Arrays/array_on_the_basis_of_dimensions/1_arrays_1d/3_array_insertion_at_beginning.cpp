@@ -19,7 +19,7 @@ int main(){
     n++;
 
     for(int i=n; i>1; i--){
-      aiab[i-1]=aiab[i-2];
+      aiab[i]=aiab[i-1];
     }
 
     aiab[0]=new_element;
