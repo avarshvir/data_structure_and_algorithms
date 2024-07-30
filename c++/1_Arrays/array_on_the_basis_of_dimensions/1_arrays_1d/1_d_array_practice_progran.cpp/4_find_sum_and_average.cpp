@@ -9,6 +9,6 @@
             sum = sum + arr[i];
         }
         cout << "sum : " << sum << endl;
-        avg = float(sum)/size;
+        avg = static_cast<float>(sum)/size;
         cout << "average : " << avg << endl;
     }
