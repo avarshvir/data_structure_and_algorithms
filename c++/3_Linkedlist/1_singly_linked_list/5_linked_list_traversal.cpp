@@ -18,6 +18,8 @@ int main(){
     Node *second = new Node();
     Node *third = new Node();
 
+    
+
     head->data = 10;
     head->next = second;
 
