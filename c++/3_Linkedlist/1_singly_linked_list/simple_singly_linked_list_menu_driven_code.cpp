@@ -37,6 +37,25 @@ Node *insertAtIndex(Node *head,int data, int index){
     return head;
 }
 
+Node *insertAtEnd(Node *head, int data){
+    Node *new_node = new Node();
+    Node *p = head;
+    while(p->next!= nullptr){
+        p = p->next;
+    }
+    p->next = new_node;
+    new_node->data = data;
+    new_node->next = nullptr;
+    return head;
+}
+
+Node *insertAfterGivenNode(Node *head, Node *prevNode, int data){
+    Node *new_node = new Node();
+    new_node->data = data;
+    new_node->next = prevNode->next;
+    prevNode->next = new_node;
+    return head;
+}
 
 
 int main(){
@@ -85,6 +104,14 @@ int main(){
                 head = insertAtIndex(head, 35,2);
                 traverse(head);
             break;
+            case 4:
+                head = insertAtEnd(head,90);
+                traverse(head);
+                break;
+                case 5:
+                head = insertAfterGivenNode(head,second,22);
+                traverse(head);
+                break;
 
             default:
                 cout << "Enter other choice : " << endl; 
