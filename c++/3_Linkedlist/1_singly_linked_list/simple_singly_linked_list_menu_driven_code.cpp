@@ -6,45 +6,44 @@ class Node{
     Node *next;
 };
 
-void traverse(Node *head){
-    while(head!=nullptr){
-        cout << head->data << " ";
-        head = head->next;
+void traverse(Node *ptr){
+    while(ptr!=nullptr){
+        cout << ptr->data << " ";
+        ptr = ptr->next;
     }
     cout << endl;
 }
 
 Node *insertAtBeg(Node *head, int data){
-
     Node *new_node = new Node();
     new_node->data = data;
     new_node->next = head;
-    return  new_node;
-
+    return new_node;
 }
 
-Node *insertAtIndex(Node *head,int data, int index){
+Node *insertAtIndex(Node *head, int data, int index){
     Node *new_node = new Node();
-    Node *p = head;
+    new_node->data = data;
+    Node *ptr = head;
     int i = 0;
-    while(i != index-1){
-        p = p->next;
+    while(i < index - 1){
+        ptr = ptr->next;
         i++;
     }
-    new_node->data = data;
-    new_node->next = p->next;
-    p->next = new_node;
+    new_node->next = ptr->next;
+    ptr->next = new_node;
     return head;
+    
 }
 
 Node *insertAtEnd(Node *head, int data){
     Node *new_node = new Node();
-    Node *p = head;
-    while(p->next!= nullptr){
-        p = p->next;
+    Node *ptr = head;
+    while(ptr->next != nullptr){
+        ptr = ptr->next;
     }
-    p->next = new_node;
     new_node->data = data;
+    ptr->next = new_node;
     new_node->next = nullptr;
     return head;
 }
