@@ -67,7 +67,7 @@ Node* deletionAtEnd(Node* head){
     while(ptr!=nullptr){
        ptr=ptr->next; 
     }
-    return head;
+
 }
 
 int main(){
