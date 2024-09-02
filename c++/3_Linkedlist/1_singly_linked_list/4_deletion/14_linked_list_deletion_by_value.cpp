@@ -25,6 +25,13 @@ Node *deletionByValue(Node *head, int value){
         p->next = q->next;
         free(q);
     }
+    if (head->data == value) {
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+    return head;
+}
+
     return head;
 }
 
@@ -50,7 +57,7 @@ int main(){
     cout << "Before Deletion : ";
     traverse(head);
     cout << "After Deletion : ";
-    head = deletionByValue(head, 33);
+    head = deletionByValue(head, 11);
     traverse(head);   
     
 }
