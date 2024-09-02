@@ -3,10 +3,10 @@ using namespace std;
 class Node{
     public:
     int data;
-    Node *next;
+    Node* next;
 };
 
-void traverse(Node *ptr){
+void traverse(Node* ptr){
     while(ptr!=nullptr){
         cout << ptr->data << " ";
         ptr = ptr->next;
@@ -14,12 +14,18 @@ void traverse(Node *ptr){
     cout << endl;
 }
 
-Node *deletionAtEnd(Node *head){
-    Node *ptr = head;
-    while(ptr!=nullptr){
-        ptr = ptr->next;
+Node* deletionAtEnd(Node* head){
+    Node* p = head;
+    Node* q = head->next;
+    int i = 0;
+    while(q->next!= nullptr){
+        p = p->next;
+        q = q->next;
+        i++;
     }
-    
+    p->next = nullptr;
+    free(q);
+    return head;
 }
 
 int main(){
@@ -43,4 +49,7 @@ int main(){
     cout << "Before Deletion : ";
     traverse(head);
 
+    cout << "After Deletion : ";
+    head = deletionAtEnd(head);
+    traverse(head);
 }
