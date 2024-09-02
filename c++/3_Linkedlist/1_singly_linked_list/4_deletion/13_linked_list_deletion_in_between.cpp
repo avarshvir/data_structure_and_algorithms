@@ -8,18 +8,32 @@ class Node{
 
 void traverse(Node *ptr){
     while(ptr!=nullptr){
-        cout << ptr->data << " ";
+        cout << ptr->data <<" ";
         ptr = ptr->next;
     }
     cout << endl;
 }
 
+Node* deletionInBetween(Node* head, int index){
+    Node* p = head;
+    Node* q = head->next;
+    int i = 0;
+    while(i < index-1){
+        p = p->next;
+        q = q->next;
+        i++;
+    }
+    p->next = q->next;
+    free(q);
+    return head;
+}
+
+
 int main(){
-    Node *head = new Node();
-    Node *second = new Node();
-    Node *third = new Node();
-    Node *fourth = new Node();
-    Node *fifth = new Node();
+    Node* head = new Node();
+    Node* second = new Node();
+    Node* third = new Node();
+    Node* fourth = new Node();
 
     head->data = 11;
     head->next = second;
@@ -31,11 +45,13 @@ int main(){
     third->next = fourth;
 
     fourth->data = 44;
-    fourth->next = fifth;
-
-    fifth->data = 55;
-    fifth->next = nullptr;
+    fourth->next = nullptr;
 
     cout << "Before Deletion : ";
     traverse(head);
+
+    head = deletionInBetween(head,2);
+    cout << "After Deletion : ";
+    traverse(head);
+    
 }
