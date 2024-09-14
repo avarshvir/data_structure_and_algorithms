@@ -6,4 +6,6 @@ int main(){
     cout << "size : " << vec.size() << endl;
     //int size = sizeof(vec) / sizeof(vec[0]);
     //cout << "manually size" << size << endl;
+
+    cout << vec.at(4) << endl;
 }
