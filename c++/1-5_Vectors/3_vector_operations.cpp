@@ -8,4 +8,10 @@ int main(){
     //cout << "manually size" << size << endl;
 
     cout << vec.at(4) << endl;
+    cout << vec.capacity() << endl;
+    vec.push_back(6);
+    cout << vec.capacity() << endl;
+    vec.push_back(6);
+    cout << vec.capacity() << endl;
+    
 }
